@@ -1,16 +1,95 @@
-# React + Vite
+# Fitness Frontend (AWS Serverless Fitness App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for a serverless fitness tracking application.
 
-Currently, two official plugins are available:
+This project connects to an AWS serverless backend built with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* AWS API Gateway
+* AWS Lambda
+* DynamoDB
+* S3 + CloudFront deployment ready
 
-## React Compiler
+Users can:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Add workouts
+* View workouts
+* Delete workouts
+* Track exercise performance
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+Frontend:
+
+* React + Vite
+* JavaScript
+* Fetch API
+
+Backend (separate repo):
+
+* AWS Lambda (Python)
+* API Gateway
+* DynamoDB
+* Serverless architecture
+
+---
+
+## Local Development
+
+Install dependencies:
+
+npm install
+
+Start dev server:
+
+npm run dev
+
+Open:
+
+http://localhost:5173
+
+---
+
+## Configure API Endpoint
+
+Update the API Gateway URL inside the app:
+
+Example:
+
+https://YOUR_API_ID.execute-api.us-east-1.amazonaws.com/prod
+
+Without this step the frontend will show:
+
+TypeError: Failed to fetch
+
+(This usually means CORS or wrong endpoint.)
+
+---
+
+## Deployment Plan
+
+Frontend will be deployed to:
+
+* AWS S3 static hosting
+* AWS CloudFront CDN
+
+Backend is already serverless.
+
+---
+
+## Portfolio Purpose
+
+This project demonstrates:
+
+* Full-stack AWS serverless architecture
+* API integration
+* Cloud deployment workflow
+* React frontend development
+
+---
+
+## Author
+
+Elvis Uzomah
+Cloud Engineer in progress
